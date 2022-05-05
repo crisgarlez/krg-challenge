@@ -6,7 +6,6 @@ const AppContext = React.createContext();
 
 function AppProvider(props) {
 
-  console.log('AppProvider');
 
   const {
     item,

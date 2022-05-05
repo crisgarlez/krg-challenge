@@ -12,7 +12,6 @@ function AppUI() {
     item
   } = useContext(AppContext);
 
-  console.log('item', item);
 
 
   if(!item.user.isAuthenticated) {

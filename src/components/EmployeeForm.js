@@ -1,32 +1,33 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, {useContext, useState} from 'react';
+import { useForm } from "react-hook-form";
 import {AppContext} from "../context/AppContext";
 
 const EmployeeForm = () => {
 
   const [newUser, setNewUser] = useState(null);
 
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
   const {
     saveNewEmploy,
   } = useContext(AppContext);
 
-  const form = useRef(null);
 
-  const handleSubmit = () => {
-    const formData = new FormData(form.current);
+  const onSubmit = (data) => {
 
     const employData = {
-      'identification': formData.get('identification'),
-      'name': formData.get('name'),
-      'lastName': formData.get('lastName'),
-      'email': formData.get('email'),
-      'user': formData.get('email'),
-      'birthDate': '',
-      'address': '',
-      'phone': '',
-      'isVaccinated': '',
-      'vaccineType': '',
-      'vaccineDate': '',
-      'dose': '',
+      identification: data.identification,
+      name: data.name,
+      lastName: data.lastName,
+      email: data.email,
+      user: data.email,
+      birthDate: '',
+      address: '',
+      phone: '',
+      isVaccinated: '',
+      vaccineType: '',
+      vaccineDate: '',
+      dose: '',
     }
 
     console.log('employData', employData);
@@ -36,7 +37,7 @@ const EmployeeForm = () => {
   }
 
   const handleReset = () => {
-    form.current.reset();
+    reset();
     setNewUser(null);
   }
 
@@ -50,12 +51,16 @@ const EmployeeForm = () => {
         </div>
       )}
       <h1>New Employee</h1>
-      <form ref={form}>
-        <input type="text" placeholder="Identificación" name="identification" required={true} />
-        <input type="text" placeholder="Nombres" name="name" required={true} />
-        <input type="text" placeholder="Apellidos" name="lastName" required={true} />
-        <input type="text" placeholder="Correo" name="email" required={true} />
-        {!newUser && <button type="button" onClick={handleSubmit}>Guardar</button>}
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input type="text" placeholder="Identificación" name="identification" {...register("identification", {required: { value: true, message: "Campo obligatorio!" }, maxLength: 80})} />
+        {errors.identification && errors.identification.type === "required" && <span>{ errors.identification.message }</span>}
+        <input type="text" placeholder="Nombres" name="name" {...register("name", {required: { value: true, message: "Campo obligatorio!" }, maxLength: 80})} />
+        {errors.name && errors.name.type === "required" && <span>{ errors.name.message }</span>}
+        <input type="text" placeholder="Apellidos" name="lastName" {...register("lastName", {required: { value: true, message: "Campo obligatorio!" }, maxLength: 80})} />
+        {errors.lastName && errors.lastName.type === "required" && <span>{ errors.lastName.message }</span>}
+        <input type="text" placeholder="Correo" name="email" {...register("email", {required: { value: true, message: "Campo obligatorio!" }, maxLength: 80})} />
+        {errors.email && errors.email.type === "required" && <span>{ errors.email.message }</span>}
+        {!newUser && <button type="submit">Guardar</button>}
       </form>
     </div>
   );

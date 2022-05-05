@@ -10,10 +10,8 @@ const Login = ({ history }) => {
     login,
   } = useContext(AppContext);
 
-  console.log(login);
 
   const isUser = (savedUser, userToCompare) => {
-    console.log(savedUser, userToCompare);
     return savedUser.username === userToCompare.username && savedUser.password === userToCompare.password;
   }
 
@@ -26,7 +24,6 @@ const Login = ({ history }) => {
 
     const loggedInUser = item.users.find( (usuario) => isUser(usuario, user));
 
-    console.log(loggedInUser);
 
     if (loggedInUser){
       login(loggedInUser);
