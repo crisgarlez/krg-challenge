@@ -47,9 +47,9 @@ Se mostrará un formulario en el que se podrá actualizar la información del em
 ![Nuevo empleado][img.screenshot-06]
 
 
-[img.screenshot-01]: ./docs/01.png
-[img.screenshot-02]: ./docs/02.png
-[img.screenshot-03]: ./docs/03.png
-[img.screenshot-04]: ./docs/04.png
-[img.screenshot-05]: ./docs/05.png
-[img.screenshot-06]: ./docs/06.png
+[img.screenshot-01]: ./docs/01.PNG
+[img.screenshot-02]: ./docs/02.PNG
+[img.screenshot-03]: ./docs/03.PNG
+[img.screenshot-04]: ./docs/04.PNG
+[img.screenshot-05]: ./docs/05.PNG
+[img.screenshot-06]: ./docs/06.PNG
