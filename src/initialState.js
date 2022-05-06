@@ -1,4 +1,4 @@
-export default {
+const initialState = {
   users: [
     {
       username: 'admin',
@@ -32,3 +32,5 @@ export default {
     },
   ],
 };
+
+export default initialState;
