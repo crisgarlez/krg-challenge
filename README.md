@@ -9,11 +9,11 @@ Para instalar, ejecute los siguientes comandos:
 * `npm install`
 * `npm start`
 
-![Compilación](./docs/01.png)
+![Compilación][img.screenshot-01]
 
 Este proyecto usa el **_LocalStorage_** para guardar los datos.
 
-![LocalStorage](./docs/02.png)
+![LocalStorage][img.screenshot-02]
 
 ## Uso
 
@@ -23,7 +23,7 @@ Abrir el navegador en la ruta [http://localhost:3000](http://localhost:3000) par
 
 Se mostrará la pantalla de login.
 
-![Login](./docs/03.png)
+![Login][img.screenshot-03]
 
 ## Usuario Administrador
 
@@ -34,14 +34,22 @@ Las credenciales de Administrador son:
 
 Se mostrará la pantalla de administración, en la que es posible crear empleados y filtrarlos.
 
-![Administrador](./docs/04.png)
+![Administrador][img.screenshot-04]
 
 Al crear un empleado, se le mostrará el usuario y contraseña generados para el empleado ingresado.
 
-![Nuevo empleado](./docs/05.png)
+![Nuevo empleado][img.screenshot-05]
 
 ## Empleado
 
 Se mostrará un formulario en el que se podrá actualizar la información del empleado.
 
-![Nuevo empleado](./docs/06.png)
+![Nuevo empleado][img.screenshot-06]
+
+
+[img.screenshot-01]: ./docs/01.png
+[img.screenshot-02]: ./docs/02.png
+[img.screenshot-03]: ./docs/03.png
+[img.screenshot-04]: ./docs/04.png
+[img.screenshot-05]: ./docs/05.png
+[img.screenshot-06]: ./docs/06.png
